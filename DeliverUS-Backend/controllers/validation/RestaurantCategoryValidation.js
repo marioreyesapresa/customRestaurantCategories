@@ -19,6 +19,7 @@ const checkRestaurantCategoryNotExists = async (value, { req }) => {
 
 module.exports = {
   create: [
+    // solucion
     check('name').exists().isString().isLength({ min: 1, max: 50 }).trim(),
     check('name').custom(checkRestaurantCategoryNotExists)
   ]
